@@ -1,0 +1,15 @@
+{
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "esmodules": false // Set to false to target non-ES module environments (e.g., CommonJS)
+          }
+        },
+        "@babel/preset-typescript"
+      ]
+    ],
+    "plugins": ["@babel/plugin-transform-typescript"]
+  }
+  

@@ -1,0 +1,29 @@
+<div class="todo-list-wrapper">
+    <div class="mx-auto col-10">
+    <hr>
+  
+    <ul  *ngFor="let TODO of TODOItems">
+        <li>{{TODO.id}} </li>
+        <li>{{TODO.title}}</li>
+    </ul>
+  
+    <hr>
+    
+  
+ 
+  </div>
+<p>Fresh Todo</p>
+  <div class="todo-list-wrapper">
+    <div class="mx-auto col-10">
+    <hr>
+  
+    <ul  *ngFor="let TODO of freshTODOItems">
+        <li>{{TODO.id}} </li>
+        <li>{{TODO.title}}</li>
+    </ul>
+  
+    <hr>
+  
+ 
+  </div>
+  

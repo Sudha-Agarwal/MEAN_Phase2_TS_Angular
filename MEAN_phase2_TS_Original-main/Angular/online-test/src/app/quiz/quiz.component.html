@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2>{{ currentQuestion.question }}</h2>
+      <div class="list-group">
+        <button *ngFor="let choice of currentQuestion.choices; let i = index" type="button"
+          class="list-group-item list-group-item-action"
+          [ngClass]="{'active': selectedChoice === i, 'disabled': answered}"
+          (click)="answer(i)">
+          {{ choice }}
+        </button>
+      </div>
+      <div *ngIf="answered" class="mt-3">
+        <h4 [ngClass] = "isCorrect?'correct':'wrong'">Correct answer: {{ currentQuestion.choices[currentQuestion.answerIndex] }}</h4>
+        <button (click)="nextQuestion()" [disabled]="islastQuestion" class="btn btn-primary mt-3">Next question</button>
+      </div>
+      <div *ngIf="!answered" class="mt-3">
+        <button [disabled]="selectedChoice === null" (click)="checkAnswer()" class="btn btn-primary">Submit
+          answer</button>
+      </div>
+      <div *ngIf="islastQuestion" class="mt-3">
+          <button (click)="seeResult()" class="btn btn-primary">See
+              Result</button>
+      </div>
+    </div>
+  </div>
+</div>

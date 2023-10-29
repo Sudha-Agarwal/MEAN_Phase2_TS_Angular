@@ -1,0 +1,28 @@
+<h2>List of Courses</h2>
+ 
+<table class='table'>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Course Name</th>
+      <th>Author</th>
+      <th>Fee</th>
+      <th>Description</th>    
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let course of course;">
+      <td>{{course.courseNo}}</td>
+      <td>{{course.courseName}}</td>
+      <td>{{course.author}}</td>
+      <td>{{course.fee}}</td>
+      <td>{{course.description}}</td>     
+      <td><button (click)="showDetails(course)">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
+ 
+<h3>Details</h3>
+<app-course-child [course]="selectedCourse" (courseChange)="update($event)"></app-course-child>
+ 

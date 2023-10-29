@@ -1,0 +1,2 @@
+This is an example text file.
+You can replace this content with your own text.

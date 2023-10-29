@@ -1,0 +1,9 @@
+<div>
+<a routerLink="mobile-list">Mobiles</a>
+<a [routerLink]="['laptop-list']" [queryParams]="{ category: 'electronics' }">Laptops</a>
+
+
+</div>
+
+<router-outlet></router-outlet>
+

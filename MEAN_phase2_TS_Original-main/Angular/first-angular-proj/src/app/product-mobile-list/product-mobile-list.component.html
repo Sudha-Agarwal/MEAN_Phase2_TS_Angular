@@ -1,0 +1,50 @@
+<a routerLink='../mobile-list'>Mobiles</a>
+<a routerLink='../laptop-list'>Laptops</a>
+
+
+<h2>Product List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>
+            <a [routerLink]="['../products-list',product.id]">Edit</a>
+            <a [routerLink]="['../mobile-list',product.id]">View</a>
+            <button (click)="deleteProduct(product.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <button (click)="toggleForm()">Add Product</button>
+
+  <div *ngIf="showForm">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" formControlName="name" id="name" />
+          <div *ngIf="productForm.get('name').invalid && productForm.get('name').touched">
+            Name is required.
+          </div>
+        </div>
+        <div>
+          <label for="description">Description:</label>
+          <textarea formControlName="description" id="description"></textarea>
+          <div *ngIf="productForm.get('description').invalid && productForm.get('description').touched">
+            Description is required.
+          </div>
+        </div>
+        <button type="submit" [disabled]="productForm.invalid">Submit</button>
+      </form>
+      </div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,13 @@
+<h2>Parent Component</h2>
+<app-child [message]="parentMessage" (messageSent)="onMessageReceived($event)"></app-child>
+{{childMessage}}
+
+<button (click)="onClick()">Click me!</button>
+<app-child #child></app-child>
+
+
+
+
+
+
+

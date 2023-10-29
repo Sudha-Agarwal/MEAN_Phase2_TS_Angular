@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Web Page</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+    <p id="demo"></p>
+    <script type="module">
+      import { add, subtract } from './ES6_modules/math.js';
+
+      console.log(add(2, 3)); // Output: 5
+      console.log(subtract(5, 3)); // Output: 2
+
+      document.getElementById('demo').innerHTML = add(2,3);
+    </script>
+  </body>
+</html>
